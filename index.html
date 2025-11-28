@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh - CN">
+
+<head>
+  <meta charset="UTF - 8">
+  <meta name="viewport" content="width=device-width, initial - scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+
+
+  <title>Foley Master</title>
+</head>
+
+<body>
+  <!-- 标题和作1者信息部分 -->
+  <header>
+    <br>
+    <h1 style="text-align: center;font-size:48px;">FoleyImmersive: Decoupling What and Where <br>for Video-to-First-Order Ambisonics</h1>
+  </header>
+
+  <div class="author">
+<!--     <p>Liming Liang<sup>1</sup></p>
+    <p><sup>1</sup>Peking University</p> -->
+    <p>(Icassp 2026)</p>
+  </div> 
+  <br>
+  <div class="button-group">
+    <a href="#" class="button">PAPER</a>
+    <a href="#" class="button">CODE (COMING SOON)</a>
+  </div>
+
+  <!-- 内容简介部分 -->
+  <!-- <section class="description">
+    <p>Index Terms: Video-to-Audio Generation, Dataset Construction, Semantic and Temporal Alignment, Prompt Learning.</p>
+  </section> -->
+
+  <section class="abs">
+    <h2 style="text-align: center;">Abstract</h2>
+    <hr>
+    <p>We study immersive video-to-audio (V2A) by generating first-order ambisonics (FOA) from silent field-of-view videos. Existing immersive V2A systems struggle with (i) sparse semantics in public video–FOA corpora, and (ii) content–geom\-etry entanglement: end-to-end models blur “what” and “where”, while naive two-stage pipelines trade semantic fidelity for spatial coherence. We present FoleyImmersive, a decoupled, two-stage framework and a semantics-augmented dataset YT-AmbiSem, which enriches all YT-Ambigen clips with structured descriptions using Qwen2.5-VL. FoleyImmersive decouples what and where into two stages: Stage 1 uses a semantics-first diffusion model with multi-rate cross-frame attention and a probabilistic time modulator to produce a well-semantic mono $W$. Stage 2 spatializes $W$ to $XYZ$ with a complex-STFT U-Net conditioned on per-frame visuals and camera direction, where a lightweight directional residual mixer applies view-dependent gating at the bottleneck to stabilize localization with minimal content drift.
+      Our method achieves state-of-the-art semantic and spatial metrics.</p>
+    <!-- <ul>
+        <li>inadequate textual annotations in existing datasets</li>
+        <li>over-reliance on global video features</li>
+        <li>coarse temporal synchronization. To address these, we propose FoleyMaster with three key innovations</li>
+    </ul>
+    <p>To address these, we propose FoleyMaster with three key innovations:</p>
+    <ul>
+        <li>We introduce VGGSound Plus dataset with 197,955 videos annotated by Qwen2-VL-7B for fine-grained event descriptions</li>
+        <li>We develop a cross-attention semantic adapter integrating token-level text embeddings with global video features via prompt learning, enabling precise alignment between visual events and sound</li>
+        <li>We develop a probabilistic temporal adapter that adjusts audio generation based on action prominence replacing binary synchronization.</li>
+    </ul> -->
+    
+  </section>
+
+  <!-- model structure -->
+  <section class="modelstructure">
+    <h2 style="text-align: center;">Model structure</h2>
+    <hr>
+    <br><br>
+    <div class="image-struct">
+      <img src="image/foleyIMS5_01.jpg" alt="示例图片">
+  </div>
+
+
+  </section>
+
+  <!-- contribution -->
+  <section class="contribution">
+    <h2 style="text-align: center;">Contribution</h2>
+    <hr>
+    <br>
+    <ul>
+      <li>Dataset: A semantics-augmented FOA dataset with structured textual descriptions (events, objects, environment) to enhance audio-visual grounding.</li>
+      <li>Decoupled Two-Stage Architecture:
+        Stage 1 (What): A semantics-first diffusion model with Multi-Rate Cross-Frame Attention (MR-CFA) and Probabilistic Time Modulation (PTM) for mono generation.
+        Stage 2 (Where): A complex-STFT spatializer with a Directional Residual Mixer (DRM) for minimal-interference spatialization.</li>
+      <li>SOTA Results: Our method achieves state-of-the-art performance on both semantic and spatial metrics in the Video-to-First-Order Ambisonics task.</li>
+  </ul>
+    
+  </div>
+  </section>
+
+
+
+
+  <!-- 演示部分 -->
+  <!-- <section class="demos">
+    <h2 style="text-align: center;">Demos</h2>
+    <hr>
+    <p style="font-size: 18px;text-align: center;">Version1</p>
+    
+    <div class="big-demo">
+      <video controls>
+        <source src="videos/Foley_for_Nezha_Demo.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+    </video>
+    
+    </div>
+  <br><br> -->
+    <!-- <div class="audio-container">
+      <audio src="demos/FoleyVersion_1.WAV" type="audio/wav" controls></audio>
+      <audio src="demos/FoleyVersion_2.WAV" type="audio/wav" controls></audio>
+      <audio src="demos/FoleyVersion_3.WAV" type="audio/wav" controls></audio>
+  </div> -->
+  <!-- <div class="littledemo-row">
+    <div class="littledemo-item">
+      
+      <video controls>
+        <source src="videos/demo2_ex.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="font-size: 18px;">Version2</p>
+    </div>
+    <div class="littledemo-item">
+      
+      <video controls>
+        <source src="videos/demo3_ex.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="font-size: 18px;">Version3</p>
+    </div>
+  </div>
+  <br>
+  <h3>A Comparison between FoleyMaster and Other Methods</h3>
+  <br>
+  <div class="demo-row">
+    <div class="demo-item">
+      
+      <video controls>
+        <source src="videos/version1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>FoleyMaster</p>
+    </div>
+    <div class="demo-item">
+      
+      <video controls>
+        <source src="videos/Diff-Foley.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Diff-foley</p>
+    </div>
+    
+    <div class="demo-item">
+      
+      <video controls>
+        <source src="videos/FC.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>FoleyCrafter</p>
+    </div>
+    <div class="demo-item">
+      
+      <video controls>
+        <source src="videos/specVQGAN.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>specVQGAN</p>
+    </div>
+    
+  </div>
+  </section>
+
+  <br><br> -->
+  <!-- <section class="comparison">
+  <h2 style="text-align: center;">A Comparison between FoleyMaster and Other Methods</h2>
+  <hr>
+  <p>coming soon</p>
+<div class="demo-row">
+      <div class="demo-item">
+        
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Origin</p>
+      </div>
+      <div class="demo-item">
+        
+        <video controls>
+          <source src="video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>FoleyMaster</p>
+      </div>
+      <div class="demo-item">
+        
+        <video controls>
+          <source src="video3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Method1</p>
+      </div>
+      <div class="demo-item">
+        
+        <video controls>
+          <source src="video3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Method2</p>
+      </div>
+      
+    </div>
+
+  </section> -->
+  
+ <!-- <section class="vggsoundplus">
+  <h2 style="text-align: center;">Vggsound Plus</h2>
+  <hr>
+  <br>
+  
+
+
+
+
+  
+  <p style="text-align: center; font-size:20px;">We provide a download link for the VggsoundPlus dataset.</p>
+  <br>
+  <div class="centered-link">
+    <a  href="https://github.com/FoleyMaster/FoleyMaster.github.io/releases/download/v1.0/Train_Text_clean.txt" 
+    class="download-link" 
+    download>
+    🔗 VggsoundPlus 下载链接
+ </a>
+
+  </div>
+  
+
+  </section> -->
+
+
+<!--   <script src="script.js"></script> -->
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,182 @@
+  /* 全局样式 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font - family: Arial, sans - serif;
+    /* font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif; */
+    margin: 0;
+    padding: 0;
+    line - height: 1.6;
+    min-height: 100vh;
+    background-image:url("image/bg2.jpg");
+    /* 设置背景图片不重复 */
+    background-repeat: no-repeat;
+    /* 设置背景图片宽度为 100%，高度自动（保留原图高度） */
+    background-size: 100% 25%;
+  }
+  
+header {
+    text - align: center;
+    padding: 20px;
+    background - color: #f4f4f4;
+  }
+  
+header h1 {
+    margin - bottom: 20px;
+    /* font-size:42px; */
+  }
+  
+.author{
+  text - align: center; /* 让按钮组内的按钮居中 */
+  font-size: 20px;
+}
+
+  .button - group {
+    text - align: center; /* 让按钮组内的按钮居中 */
+    
+  }
+  
+  .button-group a {
+    display: inline-block; /* 让按钮并排 */
+    padding: 12px 24px;
+    margin: 8px; /* 按钮间距 */
+    background-color: white; /* 白色背景 */
+    color: black; /* 黑色字体 */
+    text-decoration: underline; /* 去掉下划线 */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px; /* 圆角 */
+    border: 2px solid white; /* 黑色边框 */
+    transition: all 0.3s ease; /* 动画过渡 */
+}
+.button-group a:hover {
+  background-color: #f0f0f0; /* 鼠标悬停时变灰 */
+}
+  
+/* .description {
+    padding: 50px;
+    text - align: center;
+    width: 50%; /* 可根据需要调整宽度 */
+    /* max-width: 1200px; 可根据需要设置最大宽度 
+    margin: 0 auto;
+    font-size:18px;
+  }
+   */
+  .abs{
+    margin-top: 40px; /* 设置与上面元素的间距为 20px */
+    padding: 40px;
+    width:70%;
+    font-size:18px;
+    line-height: 1.5; /* 使用无单位数字，推荐方式，会根据字体大小自动调整 */
+    letter-spacing: 0.6px;
+    /* font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif; */
+  }
+
+  
+
+.modelstructure {
+    
+  padding: 20px;
+  width:70%;
+}
+.image-container {
+  text-align: center;
+}
+img {
+  max-width: 85%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.contribution {
+    
+  padding: 20px;
+  width:70%;
+  font-size:18px;
+    line-height: 1.5; /* 使用无单位数字，推荐方式，会根据字体大小自动调整 */
+    letter-spacing: 0.6px;
+}
+
+
+  .demos {
+    
+    padding: 20px;
+    width:70%;
+  }
+  .big-demo{
+    text-align: center;
+  }
+  .big-demo video{
+    
+    max-width: 80%;
+  max-height: 100%;
+  }
+
+  .littledemo-row {
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    max-width: 100%;
+
+    display: flex;  /* 使用 Flexbox 实现一行布局 */
+    justify-content: space-between;  /* 水平分布，每个视频之间有间距 */
+    flex-wrap: wrap;  /* 如果屏幕太小，视频会自动换行 */
+  }
+  
+  .littledemo-item {
+    padding:0px;
+    width: 47%;  设置每个视频占用的宽度，可以根据需要调整
+    margin: 10px 0;  /* 设置视频之间的垂直间距 */
+    text-align: center;  中心对齐视频标题
+  }
+  
+  .demo-row {
+    /* margin-bottom: 180px; */
+    display: flex;  /* 使用 Flexbox 实现一行布局 */
+    justify-content: space-between;  /* 水平分布，每个视频之间有间距 */
+    flex-wrap: wrap;  /* 如果屏幕太小，视频会自动换行 */
+  }
+  
+  .demo-item {
+    padding:0px;
+    width: 22%;  设置每个视频占用的宽度，可以根据需要调整
+    margin: 10px 0;  /* 设置视频之间的垂直间距 */
+    text-align: center;  /* 中心对齐视频标题 */
+  }
+  
+  video {
+    width: 100%;  /* 视频宽度设置为容器的 100% */
+    height: auto;  /* 高度自动调整，保持视频的纵横比 */
+  }
+
+  
+  .audio-container {
+    display: flex;
+    /* 可以根据需要添加间距 */
+    gap: 10px; 
+}
+
+.vggsoundplus{
+  padding: 20px;
+    width:70%;
+    margin-bottom: 180px;
+}
+
+.centered-link {
+  text-align: center;
+}
+.download-link {
+  
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #54a8dd; /* 蓝色链接 */
+  transition: color 0.3s ease-in-out;
+}
+
+.download-link:hover {
+  color: #0056b3; /* 悬停时变深色 */
+}
