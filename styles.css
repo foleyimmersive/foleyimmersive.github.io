@@ -14,7 +14,7 @@ body {
     /* 设置背景图片不重复 */
     background-repeat: no-repeat;
     /* 设置背景图片宽度为 100%，高度自动（保留原图高度） */
-    background-size: 100% 25%;
+    background-size: 100% 20%;
   }
   
 header {
