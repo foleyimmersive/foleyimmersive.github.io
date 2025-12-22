@@ -14,7 +14,7 @@ body {
     /* 设置背景图片不重复 */
     background-repeat: no-repeat;
     /* 设置背景图片宽度为 100%，高度自动（保留原图高度） */
-    background-size: 100% 20%;
+    background-size: 100% 7%;
   }
   
 header {
@@ -99,7 +99,14 @@ img {
     line-height: 1.5; /* 使用无单位数字，推荐方式，会根据字体大小自动调整 */
     letter-spacing: 0.6px;
 }
-
+.comparison {
+    
+  padding: 20px;
+  width:100%;
+  font-size:18px;
+  line-height: 1.5; /* 使用无单位数字，推荐方式，会根据字体大小自动调整 */
+  letter-spacing: 0.6px;
+}
 
   .demos {
     
@@ -179,4 +186,74 @@ img {
 
 .download-link:hover {
   color: #0056b3; /* 悬停时变深色 */
+}
+
+
+#video-selector {
+    width: 100%;
+    max-width: 1400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column; /* Stack the rows vertically */
+    gap: 80px; /* Increase space between video rows */
+}
+.chapter-title {
+    /* font-family: 'Quicksand', sans-serif;  */
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 5px;
+    line-height:1.5;
+    letter-spacing: 0.6px;
+}
+
+.chapter-line {
+    border: none;
+    border-top: 2px solid #d0d0d0; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.section {
+    background-color: #ffffff; /* White background for section */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for separation */
+    margin-bottom: 40px; /* Add space below each section */
+}
+.section-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+/* .video-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px; */
+
+.video-row {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+/* Each video column size, reducing the width to fit 4 per row */
+.video-column {
+    /* width: 10%; /* Make the videos smaller to fit 4 per row 
+    margin-bottom: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-player-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+.video-player-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    border: none;
 }
