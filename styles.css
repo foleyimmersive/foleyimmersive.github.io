@@ -257,3 +257,25 @@ img {
     border-radius: 6px;
     border: none;
 }
+
+.YT-AMBISEM{
+  padding: 20px;
+    width:70%;
+    margin-bottom: 180px;
+}
+
+.centered-link {
+  text-align: center;
+}
+.download-link {
+  
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #54a8dd; /* 蓝色链接 */
+  transition: color 0.3s ease-in-out;
+}
+
+.download-link:hover {
+  color: #0056b3; /* 悬停时变深色 */
+}
