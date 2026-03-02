@@ -13,7 +13,7 @@
 
 
 <body>
-  <!-- 标题和作1者信息部分 -->
+  
   <header>
     <br>
     <h1 style="text-align: center;font-size:48px;">FoleyImmersive: Decoupling What and Where <br>for Video-to-First-Order Ambisonics</h1>
@@ -26,15 +26,12 @@
     <a href="#" class="button">CODE (COMING SOON)</a>
   </div>
 
-  <!-- 内容简介部分 -->
-  <!-- <section class="description">
-    <p>Index Terms: Video-to-Audio Generation, Dataset Construction, Semantic and Temporal Alignment, Prompt Learning.</p>
-  </section> -->
+  
 
   <section class="abs">
     <h2 style="text-align: center;">Abstract</h2>
     <hr>
-    <p>We study immersive video-to-audio (V2A) by generating first-order ambisonics (FOA) from silent field-of-view videos. Existing immersive V2A systems struggle with (i) sparse semantics in public video–FOA corpora, and (ii) content–geom\-etry entanglement: end-to-end models blur “what” and “where”, while naive two-stage pipelines trade semantic fidelity for spatial coherence. We present FoleyImmersive, a decoupled, two-stage framework and a semantics-augmented dataset YT-AmbiSem, which enriches all YT-Ambigen clips with structured descriptions using Qwen2.5-VL. FoleyImmersive decouples what and where into two stages: Stage 1 uses a semantics-first diffusion model with multi-rate cross-frame attention and a probabilistic time modulator to produce a well-semantic mono $W$. Stage 2 spatializes $W$ to $XYZ$ with a complex-STFT U-Net conditioned on per-frame visuals and camera direction, where a lightweight directional residual mixer applies view-dependent gating at the bottleneck to stabilize localization with minimal content drift.
+    <p>We study immersive video-to-audio (V2A) by generating first-order ambisonics (FOA) from silent field-of-view videos. Existing immersive V2A systems struggle with (i) sparse semantics in public video–FOA corpora, and (ii) content–geom\-etry entanglement: end-to-end models blur “what” and “where”, while naive two-stage pipelines trade semantic fidelity for spatial coherence. We present FoleyImmersive, a decoupled, two-stage framework and a semantics-augmented dataset YT-AmbiSem, which enriches all YT-Ambigen clips with structured descriptions using Qwen2.5-VL. FoleyImmersive decouples what and where into two stages: Stage 1 uses a semantics-first diffusion model with multi-rate cross-frame attention and a probabilistic time modulator to produce a well-semantic mono W. Stage 2 spatializes W to XYZ with a complex-STFT U-Net conditioned on per-frame visuals and camera direction, where a lightweight directional residual mixer applies view-dependent gating at the bottleneck to stabilize localization with minimal content drift.
       Our method achieves state-of-the-art semantic and spatial metrics.</p>
     <!-- <ul>
         <li>inadequate textual annotations in existing datasets</li>
@@ -56,7 +53,7 @@
     <hr>
     <br><br>
     <div class="image-struct">
-      <img src="image/foleyIMS5_01.jpg" alt="示例图片">
+      <img src="image/foleyIMS5_01.jpg" alt="example">
   </div>
 
 
@@ -213,7 +210,7 @@
                             'videos_gen/',
                             'videos_diff/',
                             'videos_spec/',
-                            'videos_visage/' // 第五个方法
+                            'videos_visage/' // 
                         ],
                         caption
                     }))
@@ -224,15 +221,11 @@
         .catch(err => console.error(err));
 </script> -->
 <script>
-/* ===============================
-   全局数据
-================================ */
+
 
 const sections = [];
 
-/* ===============================
-   UI 生成
-================================ */
+
 
 function generateUI() {
     const container = document.getElementById('video-selector');
@@ -303,9 +296,7 @@ function createVideoColumn(player, titleText) {
     return column;
 }
 
-/* ===============================
-   Player 容器（不直接创建 iframe）
-================================ */
+
 
 function createPlayerContainer(videoPath) {
     const container = document.createElement('div');
@@ -334,9 +325,7 @@ function renderPlaceholder(container) {
     `;
 }
 
-/* ===============================
-   🔥 行级 iframe 重建（核心）
-================================ */
+
 
 function reloadRow(videoRow) {
     const players = videoRow.querySelectorAll('.video-player-container');
@@ -347,7 +336,7 @@ function reloadRow(videoRow) {
         // 销毁旧 iframe / canvas
         container.innerHTML = '';
 
-        // 创建全新 iframe
+        // create new iframe
         const iframe = document.createElement('iframe');
         iframe.src = src;
         iframe.allowFullscreen = true;
@@ -364,7 +353,7 @@ function reloadRow(videoRow) {
 }
 
 /* ===============================
-   IntersectionObserver：监听整行
+   IntersectionObserver：
 ================================ */
 
 function setupRowReload() {
@@ -431,24 +420,24 @@ fetch('sections.json')
   <br>
   
 
-  <!-- 下载链接 -->
+  <!-- download link -->
   <p style="text-align: center; font-size:20px;">We provide a download link for the YT-AMBISEM dataset.</p>
   <br>
   <div class="centered-link">
     <a  href="https://github.com/foleyimmersive/foleyimmersive.github.io/releases/download/V1.0/description_train.txt" 
     class="download-link" 
     download>
-    🔗 Train.txt 下载链接
+    🔗 Train.txt download
  </a>
  <a  href="https://github.com/foleyimmersive/foleyimmersive.github.io/releases/download/V1.0/description_valid.txt" 
     class="download-link" 
     download>
-    🔗 Valid.txt 下载链接
+    🔗 Valid.txt download
  </a>
  <a  href="https://github.com/foleyimmersive/foleyimmersive.github.io/releases/download/V1.0/test_batch_process.txt" 
     class="download-link" 
     download>
-    🔗 Test.txt 下载链接
+    🔗 Test.txt download
  </a>
 
   </div>
